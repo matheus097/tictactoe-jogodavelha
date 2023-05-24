@@ -50,6 +50,7 @@ function renderQuadro() {
         let item = document.querySelector(`div[data-item=${i}]`);
         if(quadro[i] !== '') {
             item.innerHTML = quadro[i];
+            item.style.color = quadro[i] === 'x' ? 'red' : 'blue';
         } else {
             item.innerHTML = '';
         }
@@ -70,10 +71,10 @@ function togglePlayer() {
 
 function checkGame() {
     if(checkWinnerFor('x')) {
-        warning = 'The "x" win';
+        warning = '"x" win';
         playing = false;
     } else if(checkWinnerFor('o')) {
-        warning = 'The "o" win';
+        warning = '"o" win';
         playing = false;
     } else if(isFull()) {
         warning = 'Draw';
